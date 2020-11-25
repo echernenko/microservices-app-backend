@@ -7,5 +7,5 @@ How to build?
 cd /Users/echernenko/projects/microservices-app-backend
 docker build -t microservices-app-backend .
 docker images
-docker run -d -p 80:80 microservices-app-backend
+docker run -d -p 5858:5858 microservices-app-backend
 ```
