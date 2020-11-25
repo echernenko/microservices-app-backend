@@ -1,13 +1,10 @@
 from aiohttp import web
 
-async def handle(request):      
-    name = request.match_info.get('name', "World!")
-    text = "Hello, " + name
-    print('received request, replying with "{}".'.format(text))
-    return web.Response(text=text)
+async def handle(request):
+  res = {"name1": "Leoni", "name2": "Seth", "name3": "Ulrika", "name4": "Thomas", "name5": "Benghin"}
+  return web.json_response(res)
 
 app = web.Application()
 app.router.add_get('/', handle)
-app.router.add_get('/{name}', handle)
 
 web.run_app(app, port=5858)

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+docker build -t microservices-app-backend .;
+docker stop `docker ps | grep ':5858' | awk '{ print $1 }'`;
+docker run -d -p 127.0.0.1:5858:5858 --restart unless-stopped microservices-app-backend;
